@@ -556,9 +556,9 @@ static void dm9000_get_enetaddr(struct eth_device *dev)
 		dm9000_read_srom_word(i, dev->enetaddr + (2 * i));
 /***Modified by lk ***/
 #else 
-	if (eth_getenv_enetaddr("ethaddr", dev->enetaddr)) {
+	if (!eth_getenv_enetaddr("ethaddr", dev->enetaddr)) {
 			printf("Please set ethaddr!\n");
-		}
+	}
 	//memcpy(dev->enetaddr, "\x08\x90\x90\x90\x90\x90", 6);
 #endif
 }
