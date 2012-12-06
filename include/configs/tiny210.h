@@ -405,9 +405,9 @@
 /***Modified by lk ***/
 #define CONFIG_ETHADDR		"00:40:5c:26:0a:5b"
 #define CONFIG_NETMASK          255.255.255.0
-#define CONFIG_IPADDR		192.168.186.13
-#define CONFIG_SERVERIP		192.168.186.13
-#define CONFIG_GATEWAYIP	192.168.0.1
+#define CONFIG_IPADDR		10.10.10.100
+#define CONFIG_SERVERIP		10.10.10.1
+#define CONFIG_GATEWAYIP	10.10.10.254
 /*   For nand driver   */
 #define CONFIG_CMD_NAND
 #if defined(CONFIG_CMD_NAND)
@@ -456,5 +456,7 @@
 #define CONFIG_BACKTRACE
 
 #define CONFIG_AUTO_COMPLETE /* auto complete comman */
+
+#define CONFIG_TINY210_BAD_TIMER /* because s5pv210 had a bad timer.c imple */
 
 #endif	/* __CONFIG_H */

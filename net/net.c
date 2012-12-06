@@ -673,7 +673,11 @@ NetSetTimeout(ulong iv, thand_f *f)
 	} else {
 		timeHandler = f;
 		timeStart = get_timer(0);
+#ifdef CONFIG_TINY210_BAD_TIMER
+		timeDelta = iv * 1000;
+#else
 		timeDelta = iv;
+#endif
 	}
 }
 
