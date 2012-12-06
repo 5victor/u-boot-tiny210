@@ -26,7 +26,8 @@ void print_backtrace(void)
 		:);
 
 	while (fp != 0) {
-		printf("lr: %08x\n", *(unsigned long *)(fp - 4));
+		printf("lr: %08x %08x\n", *(unsigned long *)(fp - 4),
+						**(unsigned long **)(fp - 4));
 		fp = *(unsigned long *)(fp - 12);
 	}
 }
