@@ -434,7 +434,13 @@
 /*NAND_BOOT & MMCSD_BOOT  by lk  */
 #define CONFIG_S5PC11X
 
+/*
 #define CONFIG_ENV_IS_IN_NAND            1
+*/
+
+#define CONFIG_ENV_IS_IN_MMC
+#define CONFIG_SYS_MMC_ENV_DEV	0 /* which device */
+
 #define CONFIG_ENV_SIZE         0x4000
 #define RESERVE_BLOCK_SIZE              (2048)
 #define BL1_SIZE                        (8 << 10) /*8 K reserved for BL1*/
@@ -448,5 +454,7 @@
 #define CONFIG_TINY210_2GB_NAND
 
 #define CONFIG_BACKTRACE
+
+#define CONFIG_AUTO_COMPLETE /* auto complete comman */
 
 #endif	/* __CONFIG_H */
