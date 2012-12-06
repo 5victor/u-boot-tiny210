@@ -11,6 +11,8 @@
 
 #include <common.h>
 
+extern void print_backtrace(void);
+
 int raise (int signum)
 {
 	printf("raise: Signal # %d caught\n", signum);
@@ -18,6 +20,8 @@ int raise (int signum)
         printf("\n");
 	printf("########################################################\n");
 	printf("#   Modified by GJGJ  http://blog.csdn.net/liukun321   #\n");
+	printf("backtrace:\n");
+	print_backtrace();
 	printf("########################################################\n");
 	return 0;
 }

@@ -177,6 +177,11 @@ CPPFLAGS := $(DBGFLAGS) $(OPTFLAGS) $(RELFLAGS)		\
 ifeq ($(CONFIG_SPL_BUILD),y)
 CPPFLAGS += -ffunction-sections -fdata-sections
 LDFLAGS_FINAL += --gc-sections
+else
+# backtrace surport
+ifeq ($(CONFIG_BACKTRACE),y)
+CPPFLAGS += -mapcs
+endif
 endif
 
 ifneq ($(CONFIG_SYS_TEXT_BASE),)

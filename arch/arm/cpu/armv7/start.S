@@ -177,6 +177,7 @@ next:
 call_board_init_f:
 	ldr	sp, =(CONFIG_SYS_INIT_SP_ADDR)
 	bic	sp, sp, #7 /* 8-byte alignment for ABI compliance */
+	mov	fp, #0
 	ldr	r0,=0x00000000
 #if defined(CONFIG_TINY210) || defined(CONFIG_MINI210)
 	adr	r4, _start
