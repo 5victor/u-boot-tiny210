@@ -40,9 +40,9 @@ static inline struct s5p_timer *s5p_get_base_timer(void)
 int timer_init(void)
 {
 	/* PWM Timer 4 */
-	pwm_init(4, MUX_DIV_2, 0);
-	pwm_config(4, 0, 0);
-	pwm_enable(4);
+//	pwm_init(4, MUX_DIV_2, 0);
+//	pwm_config(4, 0, 0);
+//	pwm_enable(4);
 
 	return 0;
 }

@@ -433,13 +433,20 @@
 
 /*NAND_BOOT & MMCSD_BOOT  by lk  */
 #define CONFIG_S5PC11X
+
 #define CONFIG_ENV_IS_IN_NAND            1
-#define CONFIG_ENV_SIZE         0x4000  /* 16KB */
+#define CONFIG_ENV_SIZE         0x4000
 #define RESERVE_BLOCK_SIZE              (2048)
 #define BL1_SIZE                        (8 << 10) /*8 K reserved for BL1*/
-#define CONFIG_ENV_OFFSET               0x40000
+#define CONFIG_ENV_OFFSET               0x100000 /* 1M align to block size */
+
 #define CFG_NAND_HWECC
 #define CONFIG_NAND_BL1_8BIT_ECC
 #define CONFIG_8BIT_HW_ECC_SLC      1
+
+/* TINY210V2 2GB NAND SUPPORT*/
+#define CONFIG_TINY210_2GB_NAND
+
+#define CONFIG_BACKTRACE
 
 #endif	/* __CONFIG_H */

@@ -241,7 +241,6 @@ static void s3c_nand_enable_hwecc(struct mtd_info *mtd, int mode)
 		nfconf |= NFCONF_ECC_MLC;	/* MLC */
 
 	writel(nfconf, NFCONF);
-	printf("NFCONF = %x\n",nfconf);
 	/* Initialize & unlock */
 	nfcont = readl(NFCONT);
 	nfcont |= NFCONT_INITMECC;

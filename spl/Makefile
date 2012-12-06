@@ -101,7 +101,7 @@ all:	$(ALL-y)
 
 ifdef CONFIG_SAMSUNG
 $(obj)$(BOARD)-spl.bin: $(obj)u-boot-spl.bin
-	$(TOPDIR)/board/$(BOARDDIR)/tools/mk$(BOARD)spl.exe \
+	$(TOPDIR)/board/$(BOARDDIR)/tools/mk$(BOARD)spl \
 		$(obj)u-boot-spl.bin $(obj)$(BOARD)-spl.bin
 
 	cat $(obj)$(BOARD)-spl.bin $(TOPDIR)/u-boot.bin > $(TOPDIR)/$(BOARD)-uboot.bin

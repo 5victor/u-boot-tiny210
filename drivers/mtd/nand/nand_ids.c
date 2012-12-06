@@ -107,7 +107,11 @@ const struct nand_flash_dev nand_flash_ids[] = {
 
 	/* 16 Gigabit */
 	{"NAND 2GiB 1,8V 8-bit",	0xA5, 0, 2048, 0, LP_OPTIONS},
+#ifdef CONFIG_TINY210_2GB_NAND
+	{"NAND 2GiB 3,3V 8-bit",	0xD5, 8192, 2048, 0x100000, LP_OPTIONS},
+#else
 	{"NAND 2GiB 3,3V 8-bit",	0xD5, 0, 2048, 0, LP_OPTIONS},
+#endif
 	{"NAND 2GiB 1,8V 16-bit",	0xB5, 0, 2048, 0, LP_OPTIONS16},
 	{"NAND 2GiB 3,3V 16-bit",	0xC5, 0, 2048, 0, LP_OPTIONS16},
 
